@@ -47,6 +47,7 @@ namespace GameInteraction14
             ClothesCounter -= 1;
             CreateClothes();
             ScoreText.Content = "Score: " + Score;
+            CheckScore(Score);
 
         }
 
@@ -203,6 +204,22 @@ namespace GameInteraction14
             Canvas.SetTop(newClothes, 17);
             Canvas.SetLeft(newClothes, ClothesPosition);
             GameScreen.Children.Add(newClothes);
+        }
+
+        public void CheckScore(int score)
+        {
+            if(score <= -60)
+            {
+                MessageBox.Show("Je hebt verloren, je hebt teveel min-punten behaald");
+                GameTimer.Stop();
+                
+                MainWindow MW = new MainWindow();
+                MW.Left = this.Left;
+                MW.Top = this.Top;
+
+                MW.Visibility = Visibility.Visible;
+                this.Close();
+            }
         }
 
         
