@@ -5,8 +5,10 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GameInteraction14"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="StartScreen" Height="450" Width="900" ResizeMode="NoResize">
     <Grid>
-
+        <Canvas>
+            <Button Width="600" Height="100" Canvas.Left="150" Canvas.Top="167"  FontSize="60">Start Game</Button>
+        </Canvas>
     </Grid>
 </Window>
