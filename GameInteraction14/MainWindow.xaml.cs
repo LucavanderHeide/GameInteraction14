@@ -20,5 +20,17 @@ namespace GameInteraction14
         {
             InitializeComponent();
         }
+
+        private void StartGame(object sender, RoutedEventArgs e)
+        {
+
+            GameWindow GW = new GameWindow();
+
+            GW.Left = this.Left;
+            GW.Top = this.Top;
+
+            GW.Visibility = Visibility.Visible;
+            this.Visibility = Visibility.Hidden;
+        }
     }
 }
