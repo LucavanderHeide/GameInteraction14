@@ -23,6 +23,7 @@ namespace GameInteraction14
         private bool RightKeyPressed, LeftKeyPressed;
         private DispatcherTimer GameTimer = new DispatcherTimer();
         private int Speed = 10;
+        private Random Random = new Random();
         public GameWindow()
         {
             InitializeComponent();
@@ -65,7 +66,7 @@ namespace GameInteraction14
             }
         }
 
-        public void KeyboardDown(object sender, KeyEventArgs e) 
+        public void KeyboardDown(object sender, KeyEventArgs e)
         {
             if (e.Key == Key.D)
             {
@@ -76,5 +77,38 @@ namespace GameInteraction14
                 LeftKeyPressed = true;
             }
         }
+
+        private void AddClothes(string ClothesType = "Clothes")
+        {
+            int ClothesColor = Random.Next(1, 8);
+            ImageBrush ClothesImage = new ImageBrush();
+            //random bepalen welk shirt er wordt gemaakt
+            switch (ClothesColor)
+            {
+                case 1:
+                    ClothesImage.ImageSource = new BitmapImage(new Uri("pack://application:,,,/images/BlueShirt.png"));
+                    break;
+                case 2:
+                    ClothesImage.ImageSource = new BitmapImage(new Uri("pack://application:,,,/images/BlackShirt.png"));
+                    break;
+                case 3:
+                    ClothesImage.ImageSource = new BitmapImage(new Uri("pack://application:,,,/images/GreenShirt.png"));
+                    break;
+                case 4:
+                    ClothesImage.ImageSource = new BitmapImage(new Uri("pack://application:,,,/images/YellowShirt.png"));
+                    break;
+                case 5:
+                    ClothesImage.ImageSource = new BitmapImage(new Uri("pack://application:,,,/images/RedShirt.png"));
+                    break;
+                case 6:
+                    ClothesImage.ImageSource = new BitmapImage(new Uri("pack://application:,,,/images/WhiteShirt.png"));
+                    break;
+                case 7:
+                    ClothesImage.ImageSource = new BitmapImage(new Uri("pack://application:,,,/images/ElsaShirt.png"));
+                    ClothesType = "ElsaShirt";
+                    break;
+            }
+        }
     }
 }
+
