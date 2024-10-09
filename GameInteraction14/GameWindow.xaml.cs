@@ -22,6 +22,7 @@ namespace GameInteraction14
     {
         private bool RightKeyPressed, LeftKeyPressed;
         private DispatcherTimer GameTimer = new DispatcherTimer();
+        private int Speed = 10;
         public GameWindow()
         {
             InitializeComponent();
@@ -33,7 +34,23 @@ namespace GameInteraction14
 
         public void GameTick(object sender, EventArgs e)
         {
-            
+            Controls();
+        }
+
+        private void Controls()
+        {
+            if (RightKeyPressed && Canvas.GetLeft(Player) < 820)
+            {
+                Canvas.SetLeft(Player, Canvas.GetLeft(Player) + Speed);
+            }
+            if (LeftKeyPressed && Canvas.GetLeft(Player) > 10)
+            {
+                Canvas.SetLeft(Player, Canvas.GetLeft(Player) - Speed);
+            }
+
+
+
+
         }
 
         public void KeyboardUp(object sender, KeyEventArgs e)
