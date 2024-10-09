@@ -7,6 +7,13 @@
         mc:Ignorable="d"
         Title="GameWindow" Height="450" Width="800">
     <Grid>
-        
+        <Canvas x:Name="GameScreen" Focusable="True" KeyUp="KeyboardUp" KeyDown="KeyboardDown" >
+            <Rectangle Width="900" Height="385" Fill="LightBlue"  HorizontalAlignment="Center" VerticalAlignment="Top" ></Rectangle>
+            <Label x:Name="ScoreText" Content="Score: 0" FontSize="18" FontWeight="Bold" Canvas.Left="334" />
+            <Rectangle x:Name="Player"  Width="50" Height="50" Fill="red" Canvas.Left="334" Canvas.Top="335" HorizontalAlignment="Center" VerticalAlignment="Top" ></Rectangle>
+            <Rectangle Width="900" Height="30" Fill="#78644E" HorizontalAlignment="Left" Canvas.Top="405" VerticalAlignment="Center"></Rectangle>
+            <Rectangle Width="900" Height="20" Fill="#759668" HorizontalAlignment="Center" Canvas.Top="385" VerticalAlignment="Top"></Rectangle>
+
+        </Canvas>
     </Grid>
 </Window>

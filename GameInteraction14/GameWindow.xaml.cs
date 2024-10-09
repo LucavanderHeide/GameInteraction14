@@ -23,5 +23,15 @@ namespace GameInteraction14
         {
             InitializeComponent();
         }
+
+        public void KeyboardUp(object sender, KeyEventArgs e)
+        {
+
+        }
+
+        public void KeyboardDown(object sender, KeyEventArgs e) 
+        { 
+
+        }
     }
 }
