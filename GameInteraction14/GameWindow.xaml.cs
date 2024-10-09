@@ -70,7 +70,7 @@ namespace GameInteraction14
                 {
                     Canvas.SetTop(x, Canvas.GetTop(x) + 3);
 
-                    if (Canvas.GetTop(x) > 425)
+                    if (Canvas.GetTop(x) > 405)
                     {
                         RemoveClothes.Add(x);
                         Score -= 10;
