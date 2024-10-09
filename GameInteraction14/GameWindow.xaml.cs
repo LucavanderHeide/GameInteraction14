@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using System.Windows.Threading;
 
 namespace GameInteraction14
 {
@@ -20,9 +21,19 @@ namespace GameInteraction14
     public partial class GameWindow : Window
     {
         private bool RightKeyPressed, LeftKeyPressed;
+        private DispatcherTimer GameTimer = new DispatcherTimer();
         public GameWindow()
         {
             InitializeComponent();
+            GameScreen.Focus();
+            GameTimer.Interval = TimeSpan.FromMilliseconds(20);
+            GameTimer.Tick += GameTick;
+            GameTimer.Start();
+        }
+
+        public void GameTick(object sender, EventArgs e)
+        {
+            
         }
 
         public void KeyboardUp(object sender, KeyEventArgs e)
