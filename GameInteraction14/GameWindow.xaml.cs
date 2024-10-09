@@ -19,6 +19,7 @@ namespace GameInteraction14
     /// </summary>
     public partial class GameWindow : Window
     {
+        private bool RightKeyPressed, LeftKeyPressed;
         public GameWindow()
         {
             InitializeComponent();
@@ -26,12 +27,26 @@ namespace GameInteraction14
 
         public void KeyboardUp(object sender, KeyEventArgs e)
         {
-
+            if (e.Key == Key.D)
+            {
+                RightKeyPressed = false;
+            }
+            if (e.Key == Key.A)
+            {
+                LeftKeyPressed = false;
+            }
         }
 
         public void KeyboardDown(object sender, KeyEventArgs e) 
-        { 
-
+        {
+            if (e.Key == Key.D)
+            {
+                RightKeyPressed = true;
+            }
+            if (e.Key == Key.A)
+            {
+                LeftKeyPressed = true;
+            }
         }
     }
 }
