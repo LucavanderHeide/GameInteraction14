@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GameInteraction14"
         mc:Ignorable="d"
-        Title="GameWindow" Height="450" Width="800">
+        Title="GameWindow" Height="450" Width="900" ResizeMode="NoResize">
     <Grid>
         <Canvas x:Name="GameScreen" Focusable="True" KeyUp="KeyboardUp" KeyDown="KeyboardDown" >
             <Rectangle Width="900" Height="385" Fill="LightBlue"  HorizontalAlignment="Center" VerticalAlignment="Top" ></Rectangle>

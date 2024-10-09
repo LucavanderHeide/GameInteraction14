@@ -10,8 +10,10 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Media.Media3D;
 using System.Windows.Shapes;
 using System.Windows.Threading;
+using static System.Formats.Asn1.AsnWriter;
 
 namespace GameInteraction14
 {
@@ -24,6 +26,11 @@ namespace GameInteraction14
         private DispatcherTimer GameTimer = new DispatcherTimer();
         private int Speed = 10;
         private Random Random = new Random();
+        private Rect PlayerHitBox;
+        private int ClothesCounter = 100;
+        private int Limit = 50;
+        private int Score = 0;
+        private List<Rectangle> RemoveClothes = new List<Rectangle>();
         public GameWindow()
         {
             InitializeComponent();
@@ -36,6 +43,79 @@ namespace GameInteraction14
         public void GameTick(object sender, EventArgs e)
         {
             Controls();
+            PlayerHitBox = new Rect(Canvas.GetLeft(Player), Canvas.GetTop(Player), Player.Width, Player.Height);
+            ClothesCounter -= 1;
+            CreateClothes();
+            ScoreText.Content = "Score: " + Score;
+
+        }
+
+        private void CreateClothes()
+        {
+
+
+            //controleren of er nog kledingstukken zijn en eventueel nieuwe aanmaken
+            if (ClothesCounter < 0)
+            {
+                AddClothes();
+                ClothesCounter = Limit;
+            }
+
+            //controleren of er kledingstukken zijn en deze naar beneden laten bewegen
+            //controleren of er contact wordt gemaakt met de speler
+            foreach (var x in GameScreen.Children.OfType<Rectangle>())
+            {
+
+                if (x is Rectangle && (string)x.Tag == "Clothes")
+                {
+                    Canvas.SetTop(x, Canvas.GetTop(x) + 3);
+
+                    if (Canvas.GetTop(x) > 425)
+                    {
+                        RemoveClothes.Add(x);
+                        Score -= 10;
+                    }
+
+                    Rect enemyHitBox = new Rect(Canvas.GetLeft(x), Canvas.GetTop(x), x.Width, x.Height);
+
+                    if (PlayerHitBox.IntersectsWith(enemyHitBox))
+                    {
+                        Score += 10;
+                        RemoveClothes.Add(x);
+                    }
+
+                }
+
+                //controleren of een shirt een negatief effect heeft op de speler
+                if (x is Rectangle && (string)x.Tag == "ElsaShirt")
+                {
+                    Canvas.SetTop(x, Canvas.GetTop(x) + 3);
+
+                    if (Canvas.GetTop(x) > 425)
+                    {
+                        RemoveClothes.Add(x);
+                        Score += 10;
+                    }
+
+                    Rect enemyHitBox = new Rect(Canvas.GetLeft(x), Canvas.GetTop(x), x.Width, x.Height);
+
+                    if (PlayerHitBox.IntersectsWith(enemyHitBox))
+                    {
+                        Score -= 20;
+                        RemoveClothes.Add(x);
+                    }
+
+                }
+
+            }
+
+            //verwijderen van kledingstukken
+            foreach (Rectangle i in RemoveClothes)
+            {
+                GameScreen.Children.Remove(i);
+            }
+
+
         }
 
         private void Controls()
@@ -108,7 +188,24 @@ namespace GameInteraction14
                     ClothesType = "ElsaShirt";
                     break;
             }
+
+            //ractangle voor de kleding aanmaken
+            Rectangle newClothes = new Rectangle
+            {
+                Tag = ClothesType,
+                Width = 50,
+                Height = 50,
+                Fill = ClothesImage
+            };
+
+            //positie bepalen van de kledingstukken
+            int ClothesPosition = Random.Next(25, 800);
+            Canvas.SetTop(newClothes, 17);
+            Canvas.SetLeft(newClothes, ClothesPosition);
+            GameScreen.Children.Add(newClothes);
         }
+
+        
     }
 }
 
