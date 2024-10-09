@@ -9,6 +9,18 @@
     <Grid>
         <Canvas>
             <Button Width="600" Height="100" Canvas.Left="150" Canvas.Top="167" Click="StartGame" FontSize="60">Start Game</Button>
+
+            <!--Knop naar de instructie pagina -->
+            <Button x:Name="btnNavigate"
+                    Content="Instructie Pagina"
+                    Width="170"
+                    Height="50"
+                    Background="Yellow"
+                    FontWeight="Bold"
+                    Canvas.Left="16"
+                    Canvas.Top="350"
+                    FontSize="20"
+                    Click="BtnInstructiePagina"/>
         </Canvas>
     </Grid>
 </Window>

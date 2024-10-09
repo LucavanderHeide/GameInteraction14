@@ -1,0 +1,76 @@
+﻿<Window x:Class="GameInteraction14.InstructionWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:GameInteraction14"
+        mc:Ignorable="d"
+        Title="InstructionWindow" Height="450" Width="800"
+        Background="SkyBlue">
+    <Grid>
+        <!-- Title voor de instructie -->
+        <TextBlock Text="Game Instructions"
+                   FontSize="36"
+                   FontWeight="Bold"
+                   HorizontalAlignment="Center"
+                   VerticalAlignment="Top"
+                   Margin="0,10,0,0"
+                   Foreground="White"/>
+
+        <!-- Instructie tekst -->
+        <TextBlock FontSize="20" 
+                   TextAlignment="Center"
+                   HorizontalAlignment="Center"
+                   VerticalAlignment="Top"
+                   Width="400"
+                   TextWrapping="Wrap"
+                   Foreground="Black"
+                   Margin="0,100,0,0">
+            In dit spel vallen er kledingstukken uit de waslijn
+            en jouw doel is om deze op te vangen voordat ze de grond raken.
+            <LineBreak/>
+            Maar wees voorzichtig! Niet alle kledingstukken zijn veilig om te vangen.
+            <LineBreak/>
+            (Elsa kledingstukken moet je niet raken)
+        </TextBlock>
+
+        <!-- Start Game knop -->
+        <Button Content="Start Game"
+                FontSize="24"
+                FontWeight="Bold"
+                Background="Green"
+                Foreground="White"
+                Width="200"
+                Height="60"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center"
+                Click="StartGame"
+                Margin="0,180,0,0"/>
+
+        <!-- Selecteer Level knop -->
+        <Button Content="Select Level"
+                FontSize="24"
+                FontWeight="Bold"
+                Background="HotPink"
+                Foreground="White"
+                Width="200"
+                Height="60"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center"
+                Margin="0,320,0,0"/>
+
+        <!-- Terug knop -->
+        <Button Content="Terug"
+                FontSize="20"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Bottom"
+                Margin="10"
+                Width="100"
+                Height="35"
+                Foreground="Black"
+                FontWeight="Bold"
+                Background="Yellow"
+                Click="BackButton_Click"/>
+    </Grid>
+
+</Window>

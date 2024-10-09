@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.11.35222.181
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameInteraction14", "GameInteraction14\GameInteraction14.csproj", "{5A37D076-87A2-48BC-A80B-CBA803963153}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GameInteraction14", "GameInteraction14\GameInteraction14.csproj", "{5A37D076-87A2-48BC-A80B-CBA803963153}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -32,5 +32,15 @@ namespace GameInteraction14
             GW.Visibility = Visibility.Visible;
             this.Visibility = Visibility.Hidden;
         }
+
+        // Om naar de instructie pagina te navigeren
+        private void BtnInstructiePagina(object sender, RoutedEventArgs e)
+        {
+            InstructionWindow instructionWindow = new InstructionWindow();
+            instructionWindow.Show(); // Open het instructievenster
+            this.Close(); // Sluit het huidige venster
+        }
+
+
     }
 }
