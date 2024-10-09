@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.11.35222.181
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameInteraction14", "GameInteraction14\GameInteraction14.csproj", "{5A37D076-87A2-48BC-A80B-CBA803963153}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5A37D076-87A2-48BC-A80B-CBA803963153}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5A37D076-87A2-48BC-A80B-CBA803963153}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5A37D076-87A2-48BC-A80B-CBA803963153}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5A37D076-87A2-48BC-A80B-CBA803963153}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5B006798-36C7-42D4-B62B-20471AD7F047}
+	EndGlobalSection
+EndGlobal
