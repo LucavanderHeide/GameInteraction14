@@ -41,6 +41,13 @@ namespace GameInteraction14
             this.Close(); // Sluit het huidige venster
         }
 
-
+        // Om naar de settings window te navigeren
+        private void Settings(object sender, RoutedEventArgs e)
+        {
+            // Maak ik het aan
+            SettingsWindow settingsWindo = new SettingsWindow();
+            settingsWindo.Show(); // Zodra op de knop wordt geklikt, wordt de settings window getoond
+            this.Close();
+        }
     }
 }

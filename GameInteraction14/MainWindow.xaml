@@ -22,6 +22,18 @@
                     Canvas.Top="350"
                     FontSize="20"
                     Click="BtnInstructiePagina"/>
+
+            <Button
+                Content="Instellingen"
+                FontSize="30"
+                BorderThickness="3"
+                BorderBrush="Black"
+                Width="500"
+                Height="80"
+                FontWeight="Bold"
+                Canvas.Left="200"
+                Canvas.Top="300"
+                Click="Settings"/>
         </Canvas>
     </Grid>
 </Window>
