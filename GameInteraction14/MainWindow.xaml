@@ -8,7 +8,8 @@
         Title="StartScreen" Height="450" Width="900" ResizeMode="NoResize">
     <Grid>
         <Canvas>
-            <Button Width="600" Height="100" Canvas.Left="150" Canvas.Top="167" Click="StartGame" FontSize="60">Start Game</Button>
+            <TextBlock FontSize="80" Canvas.Left="165" Canvas.Top="29">Waslijn Waanzin</TextBlock>
+            <Button Background="#06BA63" Width="600" Height="100" Canvas.Left="150" Canvas.Top="167" Click="StartGame" FontSize="65">Start Game</Button>
 
             <!--Knop naar de instructie pagina -->
             <Button x:Name="btnNavigate"
