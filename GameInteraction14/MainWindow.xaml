@@ -34,6 +34,19 @@
                 Canvas.Left="200"
                 Canvas.Top="300"
                 Click="Settings"/>
+
+            <!-- Knop naar highscore pagina-->
+            <Button
+                Content="Highscores"
+                FontSize="30"
+                BorderThickness="1"
+                Width="194"
+                Height="68"
+                FontWeight="Bold"
+                Canvas.Left="705"
+                Canvas.Top="356"
+                Click="Highscores"/>
+
         </Canvas>
     </Grid>
 </Window>

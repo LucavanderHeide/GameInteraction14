@@ -49,5 +49,14 @@ namespace GameInteraction14
             settingsWindo.Show(); // Zodra op de knop wordt geklikt, wordt de settings window getoond
             this.Close();
         }
+
+        //Om naar highscore pagina te gaan
+        private void Highscores(object sender, RoutedEventArgs e)
+        {
+            WindowMaxim highscoresPagina = new WindowMaxim();
+            highscoresPagina.Show(); //Opent highscores pagina
+            this.Close();
+        }
+            
     }
 }
