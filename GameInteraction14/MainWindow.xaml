@@ -36,16 +36,18 @@
                 Click="Settings"/>
 
             <!-- Knop naar highscore pagina-->
+
             <Button
-                Content="Highscores"
-                FontSize="30"
+                Width="90"
+                Height="90"
+                Canvas.Left="750"
+                Canvas.Top="300"
+                Click="Highscores"
                 BorderThickness="1"
-                Width="194"
-                Height="68"
-                FontWeight="Bold"
-                Canvas.Left="705"
-                Canvas.Top="356"
-                Click="Highscores"/>
+                Background="Transparent" BorderBrush="Transparent" RenderTransformOrigin="1.033,0.309">
+                <Image Source="/images/Vector.png"/>
+
+            </Button>
 
         </Canvas>
     </Grid>
