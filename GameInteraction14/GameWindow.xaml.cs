@@ -206,6 +206,7 @@ namespace GameInteraction14
             GameScreen.Children.Add(newClothes);
         }
 
+        //als de score onder een bepaalde waarde komt, wordt het spel gestopt
         public void CheckScore(int score)
         {
             if(score <= -60)
@@ -217,7 +218,7 @@ namespace GameInteraction14
                 MW.Left = this.Left;
                 MW.Top = this.Top;
 
-                MW.Visibility = Visibility.Visible;
+                MW.Show();
                 this.Close();
             }
         }
