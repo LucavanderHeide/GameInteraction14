@@ -9,7 +9,22 @@
     <Grid>
         <Canvas>
             <TextBlock FontSize="80" Canvas.Left="165" Canvas.Top="29">Waslijn Waanzin</TextBlock>
-            <Button Background="#06BA63" Width="600" Height="100" Canvas.Left="150" Canvas.Top="167" Click="StartGame" FontSize="65">Start Game</Button>
+            <Button Width="50"
+                    Height="50" 
+                    Canvas.Left="840" 
+                    Canvas.Top="10"
+                    Background="Red"
+                    Click="CloseApplication"
+                    />
+
+            <!--knop voor het starten van de game-->
+            <Button Background="#06BA63" 
+                    Width="600" Height="100" 
+                    Canvas.Left="150" 
+                    Canvas.Top="167" 
+                    Click="StartGame" 
+                    FontSize="65"
+                    Content="Start Game"/>
 
             <!--Knop naar de instructie pagina -->
             <Button x:Name="btnNavigate"
@@ -36,16 +51,18 @@
                 Click="Settings"/>
 
             <!-- Knop naar highscore pagina-->
+
             <Button
-                Content="Highscores"
-                FontSize="30"
+                Width="90"
+                Height="90"
+                Canvas.Left="750"
+                Canvas.Top="300"
+                Click="Highscores"
                 BorderThickness="1"
-                Width="194"
-                Height="68"
-                FontWeight="Bold"
-                Canvas.Left="705"
-                Canvas.Top="356"
-                Click="Highscores"/>
+                Background="Transparent" BorderBrush="Transparent" RenderTransformOrigin="1.033,0.309">
+                <Image Source="/images/Vector.png"/>
+
+            </Button>
 
         </Canvas>
     </Grid>
