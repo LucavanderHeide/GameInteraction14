@@ -25,14 +25,7 @@
                    Width="400"
                    TextWrapping="Wrap"
                    Foreground="Black"
-                   Margin="0,100,0,0">
-            In dit spel vallen er kledingstukken uit de waslijn
-            en jouw doel is om deze op te vangen voordat ze de grond raken.
-            <LineBreak/>
-            Maar wees voorzichtig! Niet alle kledingstukken zijn veilig om te vangen.
-            <LineBreak/>
-            (Elsa kledingstukken moet je niet raken)
-        </TextBlock>
+                   Margin="0,100,0,0"><Run Text="In dit spel vallen er kledingstukken van de waslijn en jouw doel is om deze op te vangen voordat ze de grond raken."/><LineBreak/><Run Text="Maar wees voorzichtig! Niet alle kledingstukken zijn veilig om te vangen."/><LineBreak/><Run Text="(Elsa kledingstukken moet je niet raken)"/></TextBlock>
 
         <!-- Start Game knop -->
         <Button Content="Start Game"
