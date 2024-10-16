@@ -21,6 +21,7 @@ namespace GameInteraction14
             InitializeComponent();
         }
 
+        // voor het starten van de game
         private void StartGame(object sender, RoutedEventArgs e)
         {
 
@@ -29,14 +30,16 @@ namespace GameInteraction14
             GW.Left = this.Left;
             GW.Top = this.Top;
 
-            GW.Visibility = Visibility.Visible;
-            this.Visibility = Visibility.Hidden;
+            GW.Show(); // Zodra op de knop wordt geklikt, wordt de game window getoond
+            this.Close(); // Sluit het huidige venster
         }
 
         // Om naar de instructie pagina te navigeren
         private void BtnInstructiePagina(object sender, RoutedEventArgs e)
         {
             InstructionWindow instructionWindow = new InstructionWindow();
+            instructionWindow.Left = this.Left;
+            instructionWindow.Top = this.Top;
             instructionWindow.Show(); // Open het instructievenster
             this.Close(); // Sluit het huidige venster
         }
@@ -46,6 +49,9 @@ namespace GameInteraction14
         {
             // Maak ik het aan
             SettingsWindow settingsWindo = new SettingsWindow();
+
+            settingsWindo.Left = this.Left;
+            settingsWindo.Top = this.Top;
             settingsWindo.Show(); // Zodra op de knop wordt geklikt, wordt de settings window getoond
             this.Close();
         }
@@ -54,6 +60,8 @@ namespace GameInteraction14
         private void Highscores(object sender, RoutedEventArgs e)
         {
             WindowMaxim highscoresPagina = new WindowMaxim();
+            highscoresPagina.Left = this.Left;
+            highscoresPagina.Top = this.Top;
             highscoresPagina.Show(); //Opent highscores pagina
             this.Close();
         }
