@@ -13,6 +13,7 @@
             <Rectangle x:Name="Player"  Width="50" Height="50" Fill="red" Canvas.Left="334" Canvas.Top="335" HorizontalAlignment="Center" VerticalAlignment="Center" ></Rectangle>
             <Rectangle Width="900" Height="30" Fill="#78644E" HorizontalAlignment="Left" Canvas.Top="405" VerticalAlignment="Center"></Rectangle>
             <Rectangle Width="900" Height="20" Fill="#759668" HorizontalAlignment="Center" Canvas.Top="385" VerticalAlignment="Top"></Rectangle>
+            <Image Height="56" Source="/images/Waslijn.png" Width="902"/>
 
         </Canvas>
     </Grid>
