@@ -65,6 +65,10 @@ namespace GameInteraction14
             highscoresPagina.Show(); //Opent highscores pagina
             this.Close();
         }
-            
+
+        private void CloseApplication(object sender, RoutedEventArgs e)
+        {
+            Application.Current.Shutdown();
+        }
     }
 }
