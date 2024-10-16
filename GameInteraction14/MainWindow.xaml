@@ -5,7 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GameInteraction14"
         mc:Ignorable="d"
-        Title="StartScreen" Height="450" Width="900" ResizeMode="NoResize">
+        Title="StartScreen" Height="450" Width="900" ResizeMode="NoResize"
+        Background="#5CCEF4">
     <Grid>
         <Canvas>
             <TextBlock FontSize="80" Canvas.Left="165" Canvas.Top="29">Waslijn Waanzin</TextBlock>
