@@ -31,6 +31,9 @@ namespace GameInteraction14
         private int Limit = 50;
         private int Score = 0;
         private List<Rectangle> RemoveClothes = new List<Rectangle>();
+        
+       
+
         public GameWindow()
         {
             InitializeComponent();
@@ -38,6 +41,8 @@ namespace GameInteraction14
             GameTimer.Interval = TimeSpan.FromMilliseconds(20);
             GameTimer.Tick += GameTick;
             GameTimer.Start();
+
+            
         }
 
         public void GameTick(object sender, EventArgs e)
