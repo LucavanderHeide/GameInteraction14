@@ -28,15 +28,18 @@
 
             <!--Knop naar de instructie pagina -->
             <Button x:Name="btnNavigate"
-                    Content="Instructie Pagina"
-                    Width="170"
-                    Height="50"
-                    Background="Yellow"
-                    FontWeight="Bold"
-                    Canvas.Left="16"
-                    Canvas.Top="350"
-                    FontSize="20"
-                    Click="BtnInstructiePagina"/>
+            Width="84"
+            Height="60"
+            Background="Transparent"
+            BorderThickness="0"
+            Canvas.Left="25"
+            Canvas.Top="315"
+            FontSize="20"
+            Click="BtnInstructiePagina" HorizontalAlignment="Left" VerticalAlignment="Center">
+                <!-- Voeg de afbeelding binnen de knop toe -->
+                <Image Source="/images/Instructie.png" Stretch="Fill" Height="50" Width="56"/>
+            </Button>
+
 
             <Button
                 Content="Instellingen"
