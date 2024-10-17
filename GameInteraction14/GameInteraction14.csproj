@@ -17,6 +17,7 @@
     <None Remove="images\Instructie.png" />
     <None Remove="images\PinkShirt.png" />
     <None Remove="images\RedShirt.png" />
+    <None Remove="images\Startscherm.png" />
     <None Remove="images\Vector.png" />
     <None Remove="images\Waslijn.png" />
     <None Remove="images\WhiteShirt.png" />
@@ -32,6 +33,7 @@
     <Resource Include="images\Instructie.png" />
     <Resource Include="images\PinkShirt.png" />
     <Resource Include="images\RedShirt.png" />
+    <Resource Include="images\Startscherm.png" />
     <Resource Include="images\Vector.png" />
     <Resource Include="images\Waslijn.png" />
     <Resource Include="images\WhiteShirt.png" />
