@@ -1,0 +1,55 @@
+﻿<Window x:Class="GameInteraction14.GameOver"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:GameInteraction14"
+        mc:Ignorable="d"
+        Title="GameOver" Height="450" Width="800">
+    <Grid>
+        <Canvas Background="#5CCEF4">
+            <Image Source="/images/WaslijnMetKleding.png" Height="238" Width="800" />
+            <TextBlock Canvas.Left="237" 
+                       Canvas.Top="202" 
+                       Height="92" 
+                       Width="326"
+                       FontSize="64"
+                       Foreground="Red" HorizontalAlignment="Center" VerticalAlignment="Top"
+                       >Game Over</TextBlock>
+
+            <TextBlock 
+                       x:Name="Score"
+                       Canvas.Left="130" 
+                       Canvas.Top="294"
+                       FontSize="28"
+                       FontWeight="bold" HorizontalAlignment="Left" VerticalAlignment="Top"
+                       >Goed gedaan! Je hebt ... punten behaald!</TextBlock>
+
+            <Button Content="Restart" 
+                    Canvas.Left="177" 
+                    Canvas.Top="350" 
+                    Height="50" 
+                    Width="150" 
+                    HorizontalAlignment="Left" 
+                    VerticalAlignment="Top"
+                    FontSize="28"
+                    FontWeight="Bold"
+                    Background="#06BA63"
+                    Click="OnRestart"/>
+
+            <Button Content="Quit" 
+                    Canvas.Left="460" 
+                    Canvas.Top="350" 
+                    Height="50" 
+                    Width="150"
+                    FontSize="28"
+                    FontWeight="Bold"
+                    Background="Red" 
+                    HorizontalAlignment="Center" 
+                    VerticalAlignment="Top"
+                    Click="OnQuit"/>
+
+
+        </Canvas>
+    </Grid>
+</Window>

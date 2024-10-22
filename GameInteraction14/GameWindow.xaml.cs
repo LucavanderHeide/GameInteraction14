@@ -216,14 +216,14 @@ namespace GameInteraction14
         {
             if(score <= -60)
             {
-                MessageBox.Show("Je hebt verloren, je hebt teveel min-punten behaald");
+                
                 GameTimer.Stop();
                 
-                MainWindow MW = new MainWindow();
-                MW.Left = this.Left;
-                MW.Top = this.Top;
+                GameOver GO = new GameOver(score);
+                GO.Left = this.Left;
+                GO.Top = this.Top;
 
-                MW.Show();
+                GO.Show();
                 this.Close();
             }
         }
