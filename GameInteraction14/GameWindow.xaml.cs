@@ -198,34 +198,71 @@ namespace GameInteraction14
 
         private void AddClothes(string ClothesType = "Clothes")
         {
-            int ClothesColor = Rnd.Next(1, 8);
             ImageBrush ClothesImage = new ImageBrush();
-            //random bepalen welk shirt er wordt gemaakt
-            switch (ClothesColor)
+            int RandomClothes = Rnd.Next(1, 3);
+            int RandomShirtColor = Rnd.Next(1, 8);
+            int RandomPantsColor = Rnd.Next(1, 5);
+
+            switch (RandomClothes)
             {
-                case 1:
-                    ClothesImage.ImageSource = new BitmapImage(new Uri("pack://application:,,,/images/BlueShirt.png"));
+                case 1: //shirt
+                        //random bepalen welk shirt er wordt gemaakt
+                    switch (RandomShirtColor)
+                    {
+                        case 1:
+                            ClothesImage.ImageSource = new BitmapImage(new Uri("pack://application:,,,/images/BlueShirt.png"));
+                            break;
+                        case 2:
+                            ClothesImage.ImageSource = new BitmapImage(new Uri("pack://application:,,,/images/BlackShirt.png"));
+                            break;
+                        case 3:
+                            ClothesImage.ImageSource = new BitmapImage(new Uri("pack://application:,,,/images/GreenShirt.png"));
+                            break;
+                        case 4:
+                            ClothesImage.ImageSource = new BitmapImage(new Uri("pack://application:,,,/images/YellowShirt.png"));
+                            break;
+                        case 5:
+                            ClothesImage.ImageSource = new BitmapImage(new Uri("pack://application:,,,/images/RedShirt.png"));
+                            break;
+                        case 6:
+                            ClothesImage.ImageSource = new BitmapImage(new Uri("pack://application:,,,/images/WhiteShirt.png"));
+                            break;
+                        case 7:
+                            ClothesImage.ImageSource = new BitmapImage(new Uri("pack://application:,,,/images/ElsaShirt.png"));
+                            ClothesType = "ElsaShirt";
+                            break;
+                    }
                     break;
-                case 2:
-                    ClothesImage.ImageSource = new BitmapImage(new Uri("pack://application:,,,/images/BlackShirt.png"));
+                case 2: //pants
+                    switch (RandomPantsColor)
+                    {
+                        case 1:
+                            ClothesImage.ImageSource = new BitmapImage(new Uri("pack://application:,,,/images/BroekBlauw.png"));
+                            break;
+                        case 2:
+                            ClothesImage.ImageSource = new BitmapImage(new Uri("pack://application:,,,/images/BroekBruin.png"));
+                            break;
+                        case 3:
+                            ClothesImage.ImageSource = new BitmapImage(new Uri("pack://application:,,,/images/BroekGrijs.png"));
+                            break;
+                        case 4:
+                            ClothesImage.ImageSource = new BitmapImage(new Uri("pack://application:,,,/images/BroekGroen.png"));
+                            break;
+                        case 5:
+                            ClothesImage.ImageSource = new BitmapImage(new Uri("pack://application:,,,/images/BroekZwart.png"));
+                            break;
+                    }
                     break;
-                case 3:
-                    ClothesImage.ImageSource = new BitmapImage(new Uri("pack://application:,,,/images/GreenShirt.png"));
-                    break;
-                case 4:
-                    ClothesImage.ImageSource = new BitmapImage(new Uri("pack://application:,,,/images/YellowShirt.png"));
-                    break;
-                case 5:
-                    ClothesImage.ImageSource = new BitmapImage(new Uri("pack://application:,,,/images/RedShirt.png"));
-                    break;
-                case 6:
-                    ClothesImage.ImageSource = new BitmapImage(new Uri("pack://application:,,,/images/WhiteShirt.png"));
-                    break;
-                case 7:
-                    ClothesImage.ImageSource = new BitmapImage(new Uri("pack://application:,,,/images/ElsaShirt.png"));
-                    ClothesType = "ElsaShirt";
-                    break;
+               
             }
+
+
+
+
+
+            
+            
+            
 
             //ractangle voor de kleding aanmaken
             Rectangle newClothes = new Rectangle
