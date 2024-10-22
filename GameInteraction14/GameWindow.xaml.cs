@@ -31,8 +31,11 @@ namespace GameInteraction14
         private int Limit = 50;
         private int Score = 0;
         private List<Rectangle> RemoveClothes = new List<Rectangle>();
-        
-       
+
+        private DispatcherTimer CountDownTimer = new DispatcherTimer();
+        private int CountDown = 30;
+
+
 
         public GameWindow()
         {
@@ -42,7 +45,34 @@ namespace GameInteraction14
             GameTimer.Tick += GameTick;
             GameTimer.Start();
 
-            
+            CountDownTimer.Interval = TimeSpan.FromSeconds(1);
+            CountDownTimer.Tick += CountDownTick;
+            CountDownTimer.Start();
+
+
+        }
+
+
+        //timer van 30 seconden, daarna wordt het spel gestopt
+        public void CountDownTick(object sender, EventArgs e)
+        {
+            if(CountDown > 0)
+            {
+                CountDown--;
+                CountDownText.Content = "Time: " + CountDown;
+            }
+            else
+            {
+                GameTimer.Stop();
+                CountDownTimer.Stop();
+
+                GameOver GO = new GameOver(Score);
+                GO.Left = this.Left;
+                GO.Top = this.Top;
+
+                GO.Show();
+                this.Close();
+            }
         }
 
         public void GameTick(object sender, EventArgs e)
@@ -52,7 +82,7 @@ namespace GameInteraction14
             ClothesCounter -= 1;
             CreateClothes();
             ScoreText.Content = "Score: " + Score;
-            CheckScore(Score);
+            
 
         }
 
@@ -211,22 +241,7 @@ namespace GameInteraction14
             GameScreen.Children.Add(newClothes);
         }
 
-        //als de score onder een bepaalde waarde komt, wordt het spel gestopt
-        public void CheckScore(int score)
-        {
-            if(score <= -60)
-            {
-                
-                GameTimer.Stop();
-                
-                GameOver GO = new GameOver(score);
-                GO.Left = this.Left;
-                GO.Top = this.Top;
-
-                GO.Show();
-                this.Close();
-            }
-        }
+       
 
         
     }
