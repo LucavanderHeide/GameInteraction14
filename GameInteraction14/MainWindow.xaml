@@ -57,7 +57,8 @@
                 FontWeight="Bold"
                 Canvas.Left="200"
                 Canvas.Top="300"
-                Click="Settings"/>
+                Click="Settings"
+                Background="#F8F32B"/>
 
             <!-- Knop naar highscore pagina-->
 
