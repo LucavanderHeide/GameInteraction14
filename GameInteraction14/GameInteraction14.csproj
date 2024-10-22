@@ -20,6 +20,7 @@
     <None Remove="images\RedShirt.png" />
     <None Remove="images\Vector.png" />
     <None Remove="images\Waslijn.png" />
+    <None Remove="images\WaslijnMetKleding.png" />
     <None Remove="images\WhiteShirt.png" />
     <None Remove="images\YellowShirt.png" />
   </ItemGroup>
@@ -36,6 +37,7 @@
     <Resource Include="images\RedShirt.png" />
     <Resource Include="images\Vector.png" />
     <Resource Include="images\Waslijn.png" />
+    <Resource Include="images\WaslijnMetKleding.png" />
     <Resource Include="images\WhiteShirt.png" />
     <Resource Include="images\YellowShirt.png" />
   </ItemGroup>
