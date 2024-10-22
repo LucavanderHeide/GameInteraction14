@@ -36,11 +36,11 @@ namespace GameInteraction14
         private DispatcherTimer CountDownTimer = new DispatcherTimer();
         private int CountDown = 60;
         
-        public void something()
-        {     
-            SettingsWindow.EasyDifficulty = false;
+        private bool easyDifficulty = AppData.EasyDifficulty;
+        private bool mediumDifficulty = AppData.MediumDifficulty;
+        private bool hardDifficulty = AppData.HardDifficulty;
 
-        }
+
 
 
 
@@ -56,6 +56,7 @@ namespace GameInteraction14
             CountDownTimer.Tick += CountDownTick;
             CountDownTimer.Start();
 
+            
 
         }
 

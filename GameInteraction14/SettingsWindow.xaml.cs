@@ -19,9 +19,7 @@ namespace GameInteraction14
     /// </summary>
     public partial class SettingsWindow : Window
     {
-        public static bool EasyDifficulty { get; set; }
-        private bool MediumDifficulty = false;
-        private bool HardDifficulty = false;
+        
         public SettingsWindow()
         {
             InitializeComponent();
@@ -43,21 +41,21 @@ namespace GameInteraction14
 
         private void Easy(object sender, RoutedEventArgs e)
         {
-            EasyDifficulty = true;
-            MediumDifficulty = false;
-            HardDifficulty = false;
+            AppData.EasyDifficulty = true;
+            AppData.MediumDifficulty = false;
+            AppData.HardDifficulty = false;
         }
         private void Medium(object sender, RoutedEventArgs e)
         {
-            EasyDifficulty = false;
-            MediumDifficulty = true;
-            HardDifficulty = false;
+            AppData.EasyDifficulty = false;
+            AppData.MediumDifficulty = true;
+            AppData.HardDifficulty = false;
         }
         private void Hard(object sender, RoutedEventArgs e)
         {
-            EasyDifficulty = false;
-            MediumDifficulty = false;
-            HardDifficulty = true;
+            AppData.EasyDifficulty = false;
+            AppData.MediumDifficulty = false;
+            AppData.HardDifficulty = true;
         }
 
 
