@@ -12,6 +12,7 @@
     <None Remove="images\Background1.png" />
     <None Remove="images\BlackShirt.png" />
     <None Remove="images\BlueShirt.png" />
+    <None Remove="images\close.png" />
     <None Remove="images\ElsaShirt.png" />
     <None Remove="images\GreenShirt.png" />
     <None Remove="images\Instructie.png" />
@@ -27,6 +28,7 @@
     <Resource Include="images\Background1.png" />
     <Resource Include="images\BlackShirt.png" />
     <Resource Include="images\BlueShirt.png" />
+    <Resource Include="images\close.png" />
     <Resource Include="images\ElsaShirt.png" />
     <Resource Include="images\GreenShirt.png" />
     <Resource Include="images\Instructie.png" />
