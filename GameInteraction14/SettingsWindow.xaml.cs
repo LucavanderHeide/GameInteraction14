@@ -27,6 +27,8 @@ namespace GameInteraction14
         private void BackSettings(object sender, RoutedEventArgs e)
         {
             MainWindow Back = new MainWindow();
+            Back.Left = this.Left;
+            Back.Top = this.Top;
             Back.Show();
             this.Close();
         }
