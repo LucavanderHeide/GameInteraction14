@@ -91,7 +91,22 @@ namespace GameInteraction14
             CreateClothes();
             ScoreText.Content = "Score: " + Score;
             RandomClothesDropSpeed = Rnd.Next(1, 5);
-            
+
+            if (AppData.EasyDifficulty)
+            {
+                RandomClothesDropSpeed = Rnd.Next(5, 8);
+            }
+
+            if (AppData.MediumDifficulty)
+            {
+                RandomClothesDropSpeed = Rnd.Next(7, 10);
+            }
+
+            if (AppData.HardDifficulty)
+            {
+                RandomClothesDropSpeed = Rnd.Next(9, 13);
+            }
+
             Limit = Rnd.Next(30, 50);
 
         }
