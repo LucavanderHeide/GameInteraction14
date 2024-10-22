@@ -38,9 +38,23 @@ namespace GameInteraction14
 
         }
 
-        private void Button_Click_1(object sender, RoutedEventArgs e)
+        private void Easy(object sender, RoutedEventArgs e)
         {
-
+            bool EasyDifficulty = true;
+            bool MediumDifficulty = false;
+            bool HardDifficulty = false;
+        }
+        private void Medium(object sender, RoutedEventArgs e)
+        {
+            bool EasyDifficulty = false;
+            bool MediumDifficulty = true;
+            bool HardDifficulty = false;
+        }
+        private void Hard(object sender, RoutedEventArgs e)
+        {
+            bool EasyDifficulty = false;
+            bool MediumDifficulty = false;
+            bool HardDifficulty = true;
         }
     }
 }
