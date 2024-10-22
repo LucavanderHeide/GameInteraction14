@@ -19,9 +19,10 @@ namespace GameInteraction14
     /// </summary>
     public partial class GameOver : Window
     {
-        public GameOver()
+        public GameOver(int score)
         {
             InitializeComponent();
+            Score.Text = "Goed gedaan! Je hebt " + score + " punten behaald!";
         }
 
         public void OnQuit(object sender, RoutedEventArgs e)

@@ -219,7 +219,7 @@ namespace GameInteraction14
                 
                 GameTimer.Stop();
                 
-                GameOver GO = new GameOver();
+                GameOver GO = new GameOver(score);
                 GO.Left = this.Left;
                 GO.Top = this.Top;
 

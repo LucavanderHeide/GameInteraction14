@@ -17,7 +17,9 @@
                        Foreground="Red" HorizontalAlignment="Center" VerticalAlignment="Top"
                        >Game Over</TextBlock>
 
-            <TextBlock Canvas.Left="130" 
+            <TextBlock 
+                       x:Name="Score"
+                       Canvas.Left="130" 
                        Canvas.Top="294"
                        FontSize="28"
                        FontWeight="bold" HorizontalAlignment="Left" VerticalAlignment="Top"
