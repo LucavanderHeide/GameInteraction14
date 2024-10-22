@@ -35,6 +35,12 @@ namespace GameInteraction14
         
         private DispatcherTimer CountDownTimer = new DispatcherTimer();
         private int CountDown = 60;
+        
+        public void something()
+        {     
+            SettingsWindow.EasyDifficulty = false;
+
+        }
 
 
 
@@ -84,6 +90,7 @@ namespace GameInteraction14
             CreateClothes();
             ScoreText.Content = "Score: " + Score;
             RandomClothesDropSpeed = Rnd.Next(1, 5);
+            
             Limit = Rnd.Next(30, 50);
 
         }
