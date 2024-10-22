@@ -21,6 +21,7 @@
     <None Remove="images\ElsaShirt.png" />
     <None Remove="images\GreenShirt.png" />
     <None Remove="images\Instructie.png" />
+    <None Remove="images\Personage.png" />
     <None Remove="images\PinkShirt.png" />
     <None Remove="images\RedShirt.png" />
     <None Remove="images\Vector.png" />
@@ -43,6 +44,7 @@
     <Resource Include="images\ElsaShirt.png" />
     <Resource Include="images\GreenShirt.png" />
     <Resource Include="images\Instructie.png" />
+    <Resource Include="images\Personage.png" />
     <Resource Include="images\PinkShirt.png" />
     <Resource Include="images\RedShirt.png" />
     <Resource Include="images\Vector.png" />
