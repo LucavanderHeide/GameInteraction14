@@ -10,13 +10,18 @@
     <Grid>
         <Canvas>
             <TextBlock FontSize="80" Canvas.Left="165" Canvas.Top="29">Waslijn Waanzin</TextBlock>
+
+            <!--Knop voor het afsluiten van de game-->
             <Button Width="50"
                     Height="50" 
                     Canvas.Left="840" 
                     Canvas.Top="10"
-                    Background="Red"
                     Click="CloseApplication"
-                    />
+                    Background="Transparent" 
+                    BorderThickness="0">
+                <Image Source="/images/close.png" Height="46" Canvas.Top="10" Width="46" Canvas.Left="834"/>
+            </Button>
+
 
             <!--knop voor het starten van de game-->
             <Button Background="#06BA63" 
