@@ -25,15 +25,16 @@ namespace GameInteraction14
         private bool RightKeyPressed, LeftKeyPressed;
         private DispatcherTimer GameTimer = new DispatcherTimer();
         private int Speed = 10;
-        private Random Random = new Random();
+        private Random Rnd = new Random();
         private Rect PlayerHitBox;
-        private int ClothesCounter = 100;
-        private int Limit = 50;
+        private int ClothesCounter = 10;
+        private int Limit;
         private int Score = 0;
         private List<Rectangle> RemoveClothes = new List<Rectangle>();
-
+        private int RandomClothesDropSpeed;
+        
         private DispatcherTimer CountDownTimer = new DispatcherTimer();
-        private int CountDown = 30;
+        private int CountDown = 60;
 
 
 
@@ -82,13 +83,14 @@ namespace GameInteraction14
             ClothesCounter -= 1;
             CreateClothes();
             ScoreText.Content = "Score: " + Score;
-            
+            RandomClothesDropSpeed = Rnd.Next(1, 5);
+            Limit = Rnd.Next(30, 50);
 
         }
 
         private void CreateClothes()
         {
-
+            
 
             //controleren of er nog kledingstukken zijn en eventueel nieuwe aanmaken
             if (ClothesCounter < 0)
@@ -104,7 +106,7 @@ namespace GameInteraction14
 
                 if (x is Rectangle && (string)x.Tag == "Clothes")
                 {
-                    Canvas.SetTop(x, Canvas.GetTop(x) + 3);
+                    Canvas.SetTop(x, Canvas.GetTop(x) + RandomClothesDropSpeed);
 
                     if (Canvas.GetTop(x) > 405)
                     {
@@ -125,7 +127,7 @@ namespace GameInteraction14
                 //controleren of een shirt een negatief effect heeft op de speler
                 if (x is Rectangle && (string)x.Tag == "ElsaShirt")
                 {
-                    Canvas.SetTop(x, Canvas.GetTop(x) + 3);
+                    Canvas.SetTop(x, Canvas.GetTop(x) + RandomClothesDropSpeed);
 
                     if (Canvas.GetTop(x) > 425)
                     {
@@ -196,7 +198,7 @@ namespace GameInteraction14
 
         private void AddClothes(string ClothesType = "Clothes")
         {
-            int ClothesColor = Random.Next(1, 8);
+            int ClothesColor = Rnd.Next(1, 8);
             ImageBrush ClothesImage = new ImageBrush();
             //random bepalen welk shirt er wordt gemaakt
             switch (ClothesColor)
@@ -235,7 +237,7 @@ namespace GameInteraction14
             };
 
             //positie bepalen van de kledingstukken
-            int ClothesPosition = Random.Next(25, 800);
+            int ClothesPosition = Rnd.Next(25, 800);
             Canvas.SetTop(newClothes, 17);
             Canvas.SetLeft(newClothes, ClothesPosition);
             GameScreen.Children.Add(newClothes);
