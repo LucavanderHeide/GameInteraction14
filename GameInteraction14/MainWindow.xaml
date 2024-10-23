@@ -13,14 +13,23 @@
         <Image Height="440" Source="/images/Startscherm.png" Stretch="Fill" Visibility="Visible"  Width="900" HorizontalAlignment="Left" Canvas.Top="-1" VerticalAlignment="Center" RenderTransformOrigin="0.5,0.5"/>
 
         <Canvas>
+<<<<<<< HEAD
             <TextBlock FontSize="80" Canvas.Left="165" Canvas.Top="29" Foreground="">Waslijn Waanzin</TextBlock>
+=======
+            <TextBlock FontSize="80" Canvas.Left="165" Canvas.Top="29">Waslijn Waanzin</TextBlock>
+
+            <!--Knop voor het afsluiten van de game-->
+>>>>>>> 6ab391428b33b50252ad9917554c2b66da91d68e
             <Button Width="50"
                     Height="50" 
                     Canvas.Left="840" 
                     Canvas.Top="10"
-                    Background="Red"
                     Click="CloseApplication"
-                    />
+                    Background="Transparent" 
+                    BorderThickness="0">
+                <Image Source="/images/close.png" Height="46" Canvas.Top="10" Width="46" Canvas.Left="834"/>
+            </Button>
+
 
             <!--knop voor het starten van de game-->
             <Button Background="#06BA63" 
@@ -56,7 +65,8 @@
                 FontWeight="Bold"
                 Canvas.Left="200"
                 Canvas.Top="300"
-                Click="Settings"/>
+                Click="Settings"
+                Background="#F8F32B"/>
 
             <!-- Knop naar highscore pagina-->
 

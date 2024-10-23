@@ -12,14 +12,22 @@
     <None Remove="images\Background1.png" />
     <None Remove="images\BlackShirt.png" />
     <None Remove="images\BlueShirt.png" />
+    <None Remove="images\BroekBlauw.png" />
+    <None Remove="images\BroekBruin.png" />
+    <None Remove="images\BroekGrijs.png" />
+    <None Remove="images\BroekGroen.png" />
+    <None Remove="images\BroekZwart.png" />
+    <None Remove="images\close.png" />
     <None Remove="images\ElsaShirt.png" />
     <None Remove="images\GreenShirt.png" />
     <None Remove="images\Instructie.png" />
+    <None Remove="images\Personage.png" />
     <None Remove="images\PinkShirt.png" />
     <None Remove="images\RedShirt.png" />
     <None Remove="images\Startscherm.png" />
     <None Remove="images\Vector.png" />
     <None Remove="images\Waslijn.png" />
+    <None Remove="images\WaslijnMetKleding.png" />
     <None Remove="images\WhiteShirt.png" />
     <None Remove="images\YellowShirt.png" />
   </ItemGroup>
@@ -28,14 +36,22 @@
     <Resource Include="images\Background1.png" />
     <Resource Include="images\BlackShirt.png" />
     <Resource Include="images\BlueShirt.png" />
+    <Resource Include="images\BroekBlauw.png" />
+    <Resource Include="images\BroekBruin.png" />
+    <Resource Include="images\BroekGrijs.png" />
+    <Resource Include="images\BroekGroen.png" />
+    <Resource Include="images\BroekZwart.png" />
+    <Resource Include="images\close.png" />
     <Resource Include="images\ElsaShirt.png" />
     <Resource Include="images\GreenShirt.png" />
     <Resource Include="images\Instructie.png" />
+    <Resource Include="images\Personage.png" />
     <Resource Include="images\PinkShirt.png" />
     <Resource Include="images\RedShirt.png" />
     <Resource Include="images\Startscherm.png" />
     <Resource Include="images\Vector.png" />
     <Resource Include="images\Waslijn.png" />
+    <Resource Include="images\WaslijnMetKleding.png" />
     <Resource Include="images\WhiteShirt.png" />
     <Resource Include="images\YellowShirt.png" />
   </ItemGroup>

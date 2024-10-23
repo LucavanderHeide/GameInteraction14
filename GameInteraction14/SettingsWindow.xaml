@@ -22,6 +22,7 @@
                 BorderBrush="Black"
                 Click="BackSettings"/>
 
+        <!--            
             <Slider x:Name="Brightness"
                 Minimum="0" 
                 Maximum="100" 
@@ -40,7 +41,41 @@
                 Width="110"
                 TextAlignment="Center"
                />
+        -->
+            
+            <Button
+                Content="Easy"
+                FontSize="20"
+                Height="40"
+                Width="80"
+                Background="#06BA63"
+                Canvas.Top="120"
+                Canvas.Left="250"
+                Click="Easy"
+                />
 
+            <Button
+                Content="Medium"
+                FontSize="20"
+                Height="40"
+                Width="80"
+                Background="Yellow"
+                Canvas.Top="120"
+                Canvas.Left="350"
+                Click="Medium"
+                />
+            
+            <Button
+                Content="Hard"
+                FontSize="20"
+                Height="40"
+                Width="80"
+                Background="DarkRed"
+                Canvas.Top="120"
+                Canvas.Left="450"
+                Click="Hard"
+                />
+            
             <TextBlock FontSize="50" Canvas.Left="260" Canvas.Top="40"><Run Language="nl-nl" Text="Instellingen"/></TextBlock>
         </Canvas>
     </Grid>

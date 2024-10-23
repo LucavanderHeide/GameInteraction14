@@ -28,6 +28,8 @@ namespace GameInteraction14
         private void BackButton_Click(object sender, RoutedEventArgs e)
         {
             MainWindow mainWindow = new MainWindow();
+            mainWindow.Left = this.Left;
+            mainWindow.Top = this.Top;
             mainWindow.Show();
             this.Close();
         }
@@ -36,6 +38,8 @@ namespace GameInteraction14
         private void StartGame(object sender, RoutedEventArgs e)
         {
             GameWindow GameWindow = new GameWindow();
+            GameWindow.Left = this.Left;
+            GameWindow.Top = this.Top;
             GameWindow.Show();
             this.Close();
         }

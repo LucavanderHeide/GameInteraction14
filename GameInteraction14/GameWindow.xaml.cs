@@ -25,14 +25,18 @@ namespace GameInteraction14
         private bool RightKeyPressed, LeftKeyPressed;
         private DispatcherTimer GameTimer = new DispatcherTimer();
         private int Speed = 10;
-        private Random Random = new Random();
+        private Random Rnd = new Random();
         private Rect PlayerHitBox;
-        private int ClothesCounter = 100;
-        private int Limit = 50;
+        private int ClothesCounter = 10;
+        private int Limit;
         private int Score = 0;
         private List<Rectangle> RemoveClothes = new List<Rectangle>();
+        private int RandomClothesDropSpeed;
         
-       
+        private DispatcherTimer CountDownTimer = new DispatcherTimer();
+        private int CountDown = 60;
+
+
 
         public GameWindow()
         {
@@ -42,7 +46,34 @@ namespace GameInteraction14
             GameTimer.Tick += GameTick;
             GameTimer.Start();
 
-            
+            CountDownTimer.Interval = TimeSpan.FromSeconds(1);
+            CountDownTimer.Tick += CountDownTick;
+            CountDownTimer.Start();
+
+
+        }
+
+
+        //timer van 30 seconden, daarna wordt het spel gestopt
+        public void CountDownTick(object sender, EventArgs e)
+        {
+            if(CountDown > 0)
+            {
+                CountDown--;
+                CountDownText.Content = "Time: " + CountDown;
+            }
+            else
+            {
+                GameTimer.Stop();
+                CountDownTimer.Stop();
+
+                GameOver GO = new GameOver(Score);
+                GO.Left = this.Left;
+                GO.Top = this.Top;
+
+                GO.Show();
+                this.Close();
+            }
         }
 
         public void GameTick(object sender, EventArgs e)
@@ -52,13 +83,14 @@ namespace GameInteraction14
             ClothesCounter -= 1;
             CreateClothes();
             ScoreText.Content = "Score: " + Score;
-            CheckScore(Score);
+            RandomClothesDropSpeed = Rnd.Next(1, 5);
+            Limit = Rnd.Next(30, 50);
 
         }
 
         private void CreateClothes()
         {
-
+            
 
             //controleren of er nog kledingstukken zijn en eventueel nieuwe aanmaken
             if (ClothesCounter < 0)
@@ -74,7 +106,7 @@ namespace GameInteraction14
 
                 if (x is Rectangle && (string)x.Tag == "Clothes")
                 {
-                    Canvas.SetTop(x, Canvas.GetTop(x) + 3);
+                    Canvas.SetTop(x, Canvas.GetTop(x) + RandomClothesDropSpeed);
 
                     if (Canvas.GetTop(x) > 405)
                     {
@@ -95,7 +127,7 @@ namespace GameInteraction14
                 //controleren of een shirt een negatief effect heeft op de speler
                 if (x is Rectangle && (string)x.Tag == "ElsaShirt")
                 {
-                    Canvas.SetTop(x, Canvas.GetTop(x) + 3);
+                    Canvas.SetTop(x, Canvas.GetTop(x) + RandomClothesDropSpeed);
 
                     if (Canvas.GetTop(x) > 425)
                     {
@@ -166,34 +198,71 @@ namespace GameInteraction14
 
         private void AddClothes(string ClothesType = "Clothes")
         {
-            int ClothesColor = Random.Next(1, 8);
             ImageBrush ClothesImage = new ImageBrush();
-            //random bepalen welk shirt er wordt gemaakt
-            switch (ClothesColor)
+            int RandomClothes = Rnd.Next(1, 3);
+            int RandomShirtColor = Rnd.Next(1, 8);
+            int RandomPantsColor = Rnd.Next(1, 5);
+
+            switch (RandomClothes)
             {
-                case 1:
-                    ClothesImage.ImageSource = new BitmapImage(new Uri("pack://application:,,,/images/BlueShirt.png"));
+                case 1: //shirt
+                        //random bepalen welk shirt er wordt gemaakt
+                    switch (RandomShirtColor)
+                    {
+                        case 1:
+                            ClothesImage.ImageSource = new BitmapImage(new Uri("pack://application:,,,/images/BlueShirt.png"));
+                            break;
+                        case 2:
+                            ClothesImage.ImageSource = new BitmapImage(new Uri("pack://application:,,,/images/BlackShirt.png"));
+                            break;
+                        case 3:
+                            ClothesImage.ImageSource = new BitmapImage(new Uri("pack://application:,,,/images/GreenShirt.png"));
+                            break;
+                        case 4:
+                            ClothesImage.ImageSource = new BitmapImage(new Uri("pack://application:,,,/images/YellowShirt.png"));
+                            break;
+                        case 5:
+                            ClothesImage.ImageSource = new BitmapImage(new Uri("pack://application:,,,/images/RedShirt.png"));
+                            break;
+                        case 6:
+                            ClothesImage.ImageSource = new BitmapImage(new Uri("pack://application:,,,/images/WhiteShirt.png"));
+                            break;
+                        case 7:
+                            ClothesImage.ImageSource = new BitmapImage(new Uri("pack://application:,,,/images/ElsaShirt.png"));
+                            ClothesType = "ElsaShirt";
+                            break;
+                    }
                     break;
-                case 2:
-                    ClothesImage.ImageSource = new BitmapImage(new Uri("pack://application:,,,/images/BlackShirt.png"));
+                case 2: //pants
+                    switch (RandomPantsColor)
+                    {
+                        case 1:
+                            ClothesImage.ImageSource = new BitmapImage(new Uri("pack://application:,,,/images/BroekBlauw.png"));
+                            break;
+                        case 2:
+                            ClothesImage.ImageSource = new BitmapImage(new Uri("pack://application:,,,/images/BroekBruin.png"));
+                            break;
+                        case 3:
+                            ClothesImage.ImageSource = new BitmapImage(new Uri("pack://application:,,,/images/BroekGrijs.png"));
+                            break;
+                        case 4:
+                            ClothesImage.ImageSource = new BitmapImage(new Uri("pack://application:,,,/images/BroekGroen.png"));
+                            break;
+                        case 5:
+                            ClothesImage.ImageSource = new BitmapImage(new Uri("pack://application:,,,/images/BroekZwart.png"));
+                            break;
+                    }
                     break;
-                case 3:
-                    ClothesImage.ImageSource = new BitmapImage(new Uri("pack://application:,,,/images/GreenShirt.png"));
-                    break;
-                case 4:
-                    ClothesImage.ImageSource = new BitmapImage(new Uri("pack://application:,,,/images/YellowShirt.png"));
-                    break;
-                case 5:
-                    ClothesImage.ImageSource = new BitmapImage(new Uri("pack://application:,,,/images/RedShirt.png"));
-                    break;
-                case 6:
-                    ClothesImage.ImageSource = new BitmapImage(new Uri("pack://application:,,,/images/WhiteShirt.png"));
-                    break;
-                case 7:
-                    ClothesImage.ImageSource = new BitmapImage(new Uri("pack://application:,,,/images/ElsaShirt.png"));
-                    ClothesType = "ElsaShirt";
-                    break;
+               
             }
+
+
+
+
+
+            
+            
+            
 
             //ractangle voor de kleding aanmaken
             Rectangle newClothes = new Rectangle
@@ -205,28 +274,13 @@ namespace GameInteraction14
             };
 
             //positie bepalen van de kledingstukken
-            int ClothesPosition = Random.Next(25, 800);
+            int ClothesPosition = Rnd.Next(25, 800);
             Canvas.SetTop(newClothes, 17);
             Canvas.SetLeft(newClothes, ClothesPosition);
             GameScreen.Children.Add(newClothes);
         }
 
-        //als de score onder een bepaalde waarde komt, wordt het spel gestopt
-        public void CheckScore(int score)
-        {
-            if(score <= -60)
-            {
-                MessageBox.Show("Je hebt verloren, je hebt teveel min-punten behaald");
-                GameTimer.Stop();
-                
-                MainWindow MW = new MainWindow();
-                MW.Left = this.Left;
-                MW.Top = this.Top;
-
-                MW.Show();
-                this.Close();
-            }
-        }
+       
 
         
     }
