@@ -35,6 +35,12 @@ namespace GameInteraction14
         
         private DispatcherTimer CountDownTimer = new DispatcherTimer();
         private int CountDown = 60;
+        
+        private bool easyDifficulty = AppData.EasyDifficulty;
+        private bool mediumDifficulty = AppData.MediumDifficulty;
+        private bool hardDifficulty = AppData.HardDifficulty;
+
+
 
 
 
@@ -50,6 +56,7 @@ namespace GameInteraction14
             CountDownTimer.Tick += CountDownTick;
             CountDownTimer.Start();
 
+            
 
         }
 
@@ -84,6 +91,22 @@ namespace GameInteraction14
             CreateClothes();
             ScoreText.Content = "Score: " + Score;
             RandomClothesDropSpeed = Rnd.Next(1, 5);
+
+            if (AppData.EasyDifficulty)
+            {
+                RandomClothesDropSpeed = Rnd.Next(5, 8);
+            }
+
+            if (AppData.MediumDifficulty)
+            {
+                RandomClothesDropSpeed = Rnd.Next(7, 10);
+            }
+
+            if (AppData.HardDifficulty)
+            {
+                RandomClothesDropSpeed = Rnd.Next(9, 13);
+            }
+
             Limit = Rnd.Next(30, 50);
 
         }
