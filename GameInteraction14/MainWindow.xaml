@@ -10,10 +10,10 @@
 
     <Grid>
 
-        <Image Height="440" Source="/images/Startscherm.png" Stretch="Fill" Visibility="Visible"  Width="900" HorizontalAlignment="Left" Canvas.Top="-1" VerticalAlignment="Center" RenderTransformOrigin="0.5,0.5"/>
+       
 
         <Canvas>
-            <TextBlock FontSize="80" Canvas.Left="165" Canvas.Top="29" Foreground="">Waslijn Waanzin</TextBlock>
+            <TextBlock FontSize="80" Canvas.Left="165" Canvas.Top="29">Waslijn Waanzin</TextBlock>
             <Button Width="50"
                     Height="50" 
                     Canvas.Left="840" 
@@ -50,7 +50,7 @@
 
 
             <Button
-                Content="Instellingen"
+                Content="Select Level"
                 FontSize="30"
                 BorderThickness="3"
                 BorderBrush="Black"

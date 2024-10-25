@@ -58,6 +58,17 @@ namespace GameInteraction14
             AppData.HardDifficulty = true;
         }
 
+        private void StartGame(object sender, RoutedEventArgs e)
+        {
+            GameWindow GW = new GameWindow();
+
+            GW.Left = this.Left;
+            GW.Top = this.Top;
+
+            GW.Show(); // Zodra op de knop wordt geklikt, wordt de game window getoond
+            this.Close(); // Sluit het huidige venster
+        }
+
 
     }
 }
